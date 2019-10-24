@@ -6,7 +6,7 @@
  $email = $_POST['email'];
  $cidade = $_POST['cidade'];
  $estado = $_POST['estado'];
- $cep = $_POST['cep'];
+ $telefone = $_POST['telefone'];
  $mensagem = $_POST['mensagem'];
  //====================================================
  
@@ -28,7 +28,7 @@
  $email_conteudo .= "Email = $email \n";
  $email_conteudo .= "Cidade = $cidade \n"; 
  $email_conteudo .= "Estado = $estado \n"; 
- $email_conteudo .= "Cep = $cep \n"; 
+ $email_conteudo .= "Telefone = $telefone \n"; 
  $email_conteudo .= "Mensagem = $mensagem \n"; 
  //====================================================
  
@@ -45,5 +45,6 @@
  else{ 
  echo "</b>Falha no envio do E-Mail!</b>"; } 
  //====================================================
+ 
+ ?>
 
-?>
