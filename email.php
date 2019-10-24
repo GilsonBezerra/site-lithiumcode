@@ -1,6 +1,6 @@
 <?php
 
-if (($_POST(['email']) != null) {
+if (($_POST(['email']) != empty) {
 
     $nome = addcslashes($_POST(['nome']))
     $email = addcslashes($_POST(['email']))
