@@ -1,13 +1,13 @@
 <?php
 
-if (isset($_POST['email'] && !empty($_POST['email']) {
+if (isset($_POST['email']) {
 
-    $nome = addcslashes($_POST['nome'])
-    $email = addcslashes($_POST['email'])
-    $cidade = addcslashes($_POST['cidade'])
-    $estado = addcslashes($_POST['estado'])
-    $cep = addcslashes($_POST['cep'])
-    $mensagem = addcslashes($_POST(['mensagem']))
+    $nome = addcslashes($_POST['nome']);
+    $email = addcslashes($_POST['email']);
+    $cidade = addcslashes($_POST['cidade']);
+    $estado = addcslashes($_POST['estado']);
+    $cep = addcslashes($_POST['cep']);
+    $mensagem = addcslashes($_POST(['mensagem']));
 
     $to = "contato@lithiumcode.com.br";
     $subject = "Contato do Site";
