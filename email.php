@@ -1,5 +1,4 @@
 <?php
-if (isset($_POST['BTEnvia'])) {
  
  //Variaveis de POST, Alterar somente se necessário 
  //====================================================
@@ -46,5 +45,5 @@ if (isset($_POST['BTEnvia'])) {
  else{ 
  echo "</b>Falha no envio do E-Mail!</b>"; } 
  //====================================================
-} 
+
 ?>
