@@ -231,22 +231,22 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Nome</label>
-                        <input type="name" class="form-control" id="inputEmail4" placeholder="Nome" name="nome">
+                        <input type="name" class="form-control" id="inputEmail4" placeholder="Nome" name="nome" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">E-mail</label>
-                        <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail" name="email">
+                        <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail" name="email" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Cidade</label>
-                        <input type="text" class="form-control" id="inputCity" name="cidade" placeholder="Cidade">
+                        <input type="text" class="form-control" id="inputCity" name="cidade" placeholder="Cidade" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputEstado">Estado</label>
-                        <select id="inputEstado" class="form-control" name="estado">
+                        <select id="inputEstado" class="form-control" name="estado" required>
                             <option selected>Escolher...</option>
                             <option>AC</option>
                             <option>AL</option>
@@ -279,11 +279,11 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputCEP">Telefone</label>
-                        <input type="text" class="form-control" id="inputTel" name="telefone" placeholder="( ) 99999-9999">
+                        <input type="text" class="form-control" id="inputTel" name="telefone" placeholder="( ) 99999-9999" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="mensagem" id="textArea-assunto" cols="109" rows="10" placeholder="Digite aqui sua mensagem..."></textarea>
+                    <textarea class="form-control" name="mensagem" id="textArea-assunto" cols="109" rows="10" placeholder="Digite aqui sua mensagem..." required></textarea>
 
                 </div>
                 <button type="submit" class="btn btn-primary btn-xl js-scroll-trigger" name="enviar">Enviar</button>
