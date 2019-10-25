@@ -48,4 +48,5 @@
  //====================================================
  
  ?>
+ <a href="index.html">Clique aqui para voltar ao site</a>
 
