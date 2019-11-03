@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
     /*  background-image: url("../img/back.jpg"); */
 }
 
@@ -38,5 +39,11 @@ body {
         top: 60%;
         left: 55%;
         transform: translate(-50%, -50%);
+    }
+    @media(max-width: 576px) {
+        .page-section button {
+            width: 100%;
+            color: black;
+        }
     }
 }
