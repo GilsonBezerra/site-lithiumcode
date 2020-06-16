@@ -72,19 +72,18 @@ if ( $erro ) {
        $telefone="";
        $message="";
        
+       if (mail ($to, $email_subject, nl2br($email_body), $headers)){ 
+        echo "<script>
+                   window.location='index.html';
+                   alert('$nome, sua mensagem foi enviada com sucesso! Estaremos retornando em breve');
+               </script>"; 
+        
+        } 
+        else{ 
+        echo "</b>Falha no envio do E-Mail!</b>"; } 
+        //====================================================
 
 }
-
-if (mail ($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
- echo "<script>
-            window.location='index.html';
-            alert('$nome, sua mensagem foi enviada com sucesso! Estaremos retornando em breve');
-        </script>"; 
- 
- } 
- else{ 
- echo "</b>Falha no envio do E-Mail!</b>"; } 
- //====================================================
  
  ?>
  <a href="index.html">Clique aqui para voltar ao site</a>
