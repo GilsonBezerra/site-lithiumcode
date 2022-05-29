@@ -7,7 +7,7 @@
     empty($cidade = $_POST['cidade'])       ||
     empty($estado = $_POST['estado'])       ||
     empty($telefone = $_POST['telefone'])   ||
-    empty($mensagem = $_POST['mensagem']){
+    empty($mensagem = $_POST['mensagem'])){
 
     echo "No arguments Provided!";
     return false;
