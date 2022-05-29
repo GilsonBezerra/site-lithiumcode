@@ -9,8 +9,11 @@
     empty($telefone = $_POST['telefone'])   ||
     empty($mensagem = $_POST['mensagem'])){
 
-    echo "No arguments Provided!";
-    return false;
+    echo  "<script>
+                window.location='index.html';
+                alert('Todos os campos são de preenchimento obrigatório!');
+            </script>"; ;
+    return "index.html";
 }
  //====================================================
  
