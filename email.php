@@ -7,7 +7,7 @@
     empty($cidade = $_POST['cidade'])       ||
     empty($estado = $_POST['estado'])       ||
     empty($telefone = $_POST['telefone'])   ||
-    empty($mensagem = $_POST['mensagem'])   ||{
+    empty($mensagem = $_POST['mensagem']){
 
     echo "No arguments Provided!";
     return false;
@@ -43,7 +43,7 @@
  
  //Enviando o email 
  //==================================================== 
- if (mail ($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
+ if (mail($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
  echo "<script>
             window.location='index.html';
             alert('$nome, sua mensagem foi enviada com sucesso! Estaremos retornando em breve');
