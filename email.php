@@ -7,8 +7,8 @@
     empty($cidade = $_POST['cidade'])       ||
     empty($estado = $_POST['estado'])       ||
     empty($telefone = $_POST['telefone'])   ||
-    empty($mensagem = $_POST['mensagem'])){
-
+    empty($mensagem = $_POST['mensagem'])   ||
+    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
     echo  "<script>
                 window.location='index.html';
                 alert('Todos os campos são de preenchimento obrigatório!');
