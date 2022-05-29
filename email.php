@@ -2,12 +2,16 @@
  
  //Variaveis de POST, Alterar somente se necessário 
  //====================================================
- $nome = $_POST['nome'];
- $email = $_POST['email'];
- $cidade = $_POST['cidade'];
- $estado = $_POST['estado'];
- $telefone = $_POST['telefone'];
- $mensagem = $_POST['mensagem'];
+ if(empty($nome = $_POST['nome'])           ||
+    empty($email = $_POST['email'])         ||
+    empty($cidade = $_POST['cidade'])       ||
+    empty($estado = $_POST['estado'])       ||
+    empty($telefone = $_POST['telefone'])   ||
+    empty($mensagem = $_POST['mensagem'])   ||{
+
+    echo "No arguments Provided!";
+    return false;
+}
  //====================================================
  
  //REMETENTE --> ESTE EMAIL TEM QUE SER VALIDO DO DOMINIO
