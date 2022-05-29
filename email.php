@@ -13,7 +13,7 @@
                 window.location='index.html';
                 alert('Todos os campos são de preenchimento obrigatório!');
             </script>"; ;
-    return "index.html id="contact"";
+    return "index.html";
 }
  //====================================================
  
