@@ -49,7 +49,7 @@
  if (mail($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
  echo "<script>
             window.location='index.html';
-            alert('$nome, sua mensagem foi enviada com sucesso! Estaremos retornando em breve');
+            alert('$nome, sua mensagem foi enviada com sucesso! Estraremos em contato em breve!');
         </script>"; 
  
  } 
