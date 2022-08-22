@@ -21,8 +21,16 @@ $email_body = "Você acaba de receber um novo contato via site Lithium Produçõ
 // $headers = "From: contato@lithiumcode.com.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 // $headers .= "Reply-To: $email_address"; 
 $email_headers = implode ("\n",array ( "From: contato@lithiumcode.com.br", "Reply-To: $email_address", "Return-Path: $email_address","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ));  
-mail($to,$email_subject,nl2br($email_body),$email_headers);
-return true;         
+if(mail($to,$email_subject,nl2br($email_body),$email_headers)){
+    echo "<script>
+    window.location='index.html';
+    alert('$nome, sua mensagem foi enviada com sucesso! Estraremos em contato em breve!');
+</script>"; 
+
+} else{ 
+    echo "</b>Falha no envio do E-Mail!</b>"; 
+}      
 ?>
+ <a href="index.html">Clique aqui para voltar ao site</a>
 
 
