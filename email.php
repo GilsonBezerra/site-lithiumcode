@@ -17,18 +17,30 @@ if(empty($nome = $_POST['nome'])           ||
 // Create the email and send the message
 $to = 'contato@lithiumcode.com.br'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Contato do site de:  $nome";
-$email_body = "<p>Você acaba de receber um novo contato via site Lithium Produções!
-                    \n\n"."Veja os detalhes:\n\n
-                    <strong>Nome:</strong> $nome\n
-                    <strong>Email:</strong> $email\n
-                    <strong>Telefone:</strong> $telefone\n
-                    <strong>Cidade:</strong> $cidade\n
-                    <strong>Estado:</strong> $estado\n\n
-                    <strong>Mensagem:</strong>\n 
-                    <div style=`width:200px;height:100px;border:1px solid gray;background:lightgray;`>
-                        $mensagem
-                    </div>
-                </p>";
+$email_body =  '
+<style type="text/css">
+    .corpo {margin: 15px;padding: 15px;background-color: #FFF;}
+    .body {background-color: #E1E1E1;font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;font-size: 16px;}
+</style>
+
+<div class="body">
+    <div class="corpo">
+        <p><img src="http://...../images/logoEmpresa.png" width="90" height="50"></p>
+        <p>O conteúdo da nova tag div é inserido aqui</p>
+    </div>
+</div>
+
+';
+
+// "<p>Você acaba de receber um novo contato via site Lithium Produções!
+//                     \n\n"."Veja os detalhes:\n\n
+//                     <strong>Nome:</strong> $nome\n
+//                     <strong>Email:</strong> $email\n
+//                     <strong>Telefone:</strong> $telefone\n
+//                     <strong>Cidade:</strong> $cidade\n
+//                     <strong>Estado:</strong> $estado\n\n
+//                     <strong>Mensagem:</strong>\n $mensagem
+//                 </p>";
 // $headers = "From: contato@lithiumcode.com.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 // $headers .= "Reply-To: $email"; 
 $email_headers = implode ("\n",array ( "From: contato@lithiumcode.com.br", "Reply-To: $email", "Return-Path: $email","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ));  
