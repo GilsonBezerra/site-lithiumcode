@@ -25,7 +25,7 @@ $email_body = "<p>VocÃª acaba de receber um novo contato via site Lithium ProduÃ
                     <strong>Cidade:</strong> $cidade\n
                     <strong>Estado:</strong> $estado\n\n
                     <strong>Mensagem:</strong>\n 
-                    <div style="width: 200px; height: 100px; border: 1px solid gray; background: lightgray;">
+                    <div style=`width:200px;height:100px;border:1px solid gray;background:lightgray;`>
                         $mensagem
                     </div>
                 </p>";
