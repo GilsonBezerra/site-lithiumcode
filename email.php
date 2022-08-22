@@ -16,16 +16,16 @@ if(empty($nome = $_POST['nome'])           ||
  
 // Create the email and send the message
 $to = 'contato@lithiumcode.com.br'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Contato do site de:  $name";
-$email_body = "Você acaba de receber um novo contato via site Lithium Produções!\n\n"."Veja os detalhes:\n\nNome: $name\n\nEmail: $email_address\n\nTelefone: $phone\n\nMensagem:\n\n$message";
+$email_subject = "Contato do site de:  $nome";
+$email_body = "Você acaba de receber um novo contato via site Lithium Produções!\n\n"."Veja os detalhes:\n\nNome: $nome\n\nEmail: $email\n\nTelefone: $telefone\n\nMensagem:\n\n$mensagem\n\nCidade:\n\n$cidade\n\nEstado:\n\n$estado";
 // $headers = "From: contato@lithiumcode.com.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-// $headers .= "Reply-To: $email_address"; 
-$email_headers = implode ("\n",array ( "From: contato@lithiumcode.com.br", "Reply-To: $email_address", "Return-Path: $email_address","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ));  
+// $headers .= "Reply-To: $email"; 
+$email_headers = implode ("\n",array ( "From: contato@lithiumcode.com.br", "Reply-To: $email", "Return-Path: $email","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ));  
 if(mail($to,$email_subject,nl2br($email_body),$email_headers)){
     echo "<script>
-    window.location='index.html';
-    alert('$nome, sua mensagem foi enviada com sucesso! Estraremos em contato em breve!');
-</script>"; 
+                window.location='index.html';
+                alert('$nome, sua mensagem foi enviada com sucesso! Estraremos em contato em breve!');
+          </script>"; 
 
 } else{ 
     echo "</b>Falha no envio do E-Mail!</b>"; 
