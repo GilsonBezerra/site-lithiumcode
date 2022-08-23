@@ -31,12 +31,12 @@ $email_subject = "Contato do site de:  $nome";
     $$email_body .= '<html><body>';
     $$email_body .= '<img src="/wp-content/uploads/2015/06/email.jpg" />';
     $$email_body .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-        $$email_body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . $nome . "</td></tr>";
-        $$email_body .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
-        $$email_body .= "<tr><td><strong>Chegada:</strong> </td><td>" .  . $telefone . "</td></tr>";
-        $$email_body .= "<tr><td><strong>Saída:</strong> </td><td>" . $cidade . "</td></tr>";
-        $$email_body .= "<tr><td><strong>Adultos:</strong> </td><td>" . $estado . "</td></tr>";
-        $$email_body .= "<tr><td><strong>Crianças:</strong> </td><td>" . $mensagem . "</td></tr>";
+        $$email_body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" $nome "</td></tr>";
+        $$email_body .= "<tr><td><strong>Email:</strong> </td><td>" $email"</td></tr>";
+        $$email_body .= "<tr><td><strong>Chegada:</strong> </td><td>"  $telefone "</td></tr>";
+        $$email_body .= "<tr><td><strong>Saída:</strong> </td><td>" $cidade "</td></tr>";
+        $$email_body .= "<tr><td><strong>Adultos:</strong> </td><td>" $estado "</td></tr>";
+        $$email_body .= "<tr><td><strong>Crianças:</strong> </td><td>" $mensagem "</td></tr>";
     $$email_body .= "</table>";
 $$email_body .= "</body></html>";
 
