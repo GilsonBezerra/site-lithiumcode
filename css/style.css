@@ -312,6 +312,13 @@
     color: var(--light);
 }
 
+.img-size {
+    width: 800px !important; 
+}
+.img-size-vertical {
+    height: 500px !important; 
+}
+
 
 /*** Img Border ***/
 .img-border {
