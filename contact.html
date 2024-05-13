@@ -197,7 +197,7 @@
             <p class="mb-4">
               Preencha os campos abaixo e alguém da nossa equipe entratá em contato:
             </p>
-            <form>
+            <form id="contactForm" name="sentMessage" novalidate="novalidate" action="./mail/contact.php" method="POST">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating">
@@ -244,7 +244,7 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary w-100 py-3" type="submit">
+                  <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton">
                     Enviar
                   </button>
                 </div>
