@@ -8,8 +8,11 @@ $mensagem = isset($_POST['message']) ? $_POST['message'] : '';
 
 // Verifica se todos os campos estão preenchidos
 if (empty($nome) || empty($email) || empty($assunto) || empty($mensagem)) {
-    echo "Por favor, preencha todos os campos do formulário.";
-    exit; // Encerra o script se houver campos em branco
+    echo "<script>
+    window.location='index.html';
+    alert('Todos os campos são obrigatórios!');
+  </script>";
+    return "contact.html"; // Encerra o script se houver campos em branco
 }
 
 // Remetente (deve ser um e-mail válido no domínio)
@@ -48,4 +51,3 @@ if (mail($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_hea
 
 ?>
 <a href="index.html">Clique aqui para voltar ao site</a>
-
