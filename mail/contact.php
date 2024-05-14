@@ -1,23 +1,59 @@
 <?php
-if(empty($name = $_POST['name'])           ||
-   empty($email_address = $_POST['email']) ||
-   empty($subject = $_POST['subject'])         ||
-   empty($message = $_POST['message'])     ||
-   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
-      echo  "<script>
-               window.location='index.html';
-               alert('Todos os campos são de preenchimento obrigatório!');
-            </script>"; ;
-      return "contact.html";
-   }
- 
-// Create the email and send the message
-$to = 'contato@lithiumproducoes.com.br'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Contato do site de:  $name";
-$email_body = "Você acaba de receber um novo contato via site Lithium Produções!\n\n"."Veja os detalhes:\n\nNome: $name\n\nEmail: $email_address\n\nTelefone: $phone\n\nMensagem:\n\n$message";
-// $headers = "From: contato@lithiumproducoes.com.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-// $headers .= "Reply-To: $email_address"; 
-$email_headers = implode ("\n",array ( "From: contato@lithiumproducoes.com.br", "Reply-To: $email_address", "Return-Path: $email_address","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ));  
-mail($to,$email_subject,nl2br($email_body),$email_headers);
-return true;         
+
+if (isset($_POST['btnEnviar'])) {
+
+    $msg = '';
+    
+    //campos do formulario
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $assunto = $_POST["subject"];
+    $mensagem = $_POST['message'];
+
+    //valida se os campos não estão vazios
+    if ((!empty($nome)) && (!empty($email)) && (!empty($assunto)) && (!empty($mensagem))) {
+        
+        $email_remetente = "formulario_site@lithiumcode.com.br"; // deve ser uma conta de email do seu dominio 
+        $email_destinatario = $email; // email que receberá as mensagens
+        $email_recebidoDe = "$email";
+        $email_assunto = $assunto; // Este será o assunto da mensagem
+        $email_conteudo = "FORMULÁRIO DE CONTATO\n"
+            . "<br><b>De:</b> " . $nome
+            . "<br><b>Email:</b> " . $email
+            . "<br><b>Assunto:</b> " . $assunto
+            . "<br><b>Mensagem:</b> " . $mensagem
+            . "<br><br>"
+            . "<hr>"
+            . "<br>Mensagem enviada do formulário de contato da demonstração de formulário de contato com php.";
+
+        //encapsula os dados do cabeçalho do email
+        $email_cabecalho = implode("\n", array("From: $email_remetente", "Reply-To: $email_recebidoDe", "Return-Path: $email_remetente", "MIME-Version: 1.0", "X-Priority: 3", "Content-Type: text/html; charset=UTF-8"));
+        
+        //utiliza função nativa do php mail para o envio
+        //valida se o email foi enviado
+        if (mail($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_cabecalho)) {
+            
+            //mostra mensagem de envio com sucesso
+            $msg = '<div class="alert alert-success alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Mensagem enviada com sucesso!</strong> 
+            </div>';
+        } else {
+
+            //mostra mensagem de erro ao enviar
+            $msg = '<div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Erro ao enviar mensagem, tente novamente! </strong> 
+            </div>';
+        }
+        
+    } else {
+        
+        //mostra mensagem de erro caso algum dos campos esteja vazio
+        $msg = '<div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Preencha todos os campos!! </strong> 
+            </div>';
+    }
+}      
 ?>

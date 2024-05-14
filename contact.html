@@ -197,7 +197,7 @@
             <p class="mb-4">
               Preencha os campos abaixo e alguém da nossa equipe entratá em contato:
             </p>
-            <form id="contactForm" name="sentMessage" novalidate="novalidate" action="./mail/contact.php" method="POST">
+            <form id="contactForm" name="sentMessage" action="./mail/contact.php" method="POST">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating">
@@ -205,6 +205,7 @@
                       type="text"
                       class="form-control bg-light border-0"
                       name="name"
+                      id="name"
                       placeholder="Nome"
                     />
                     <label for="name">Nome</label>
@@ -216,6 +217,7 @@
                       type="email"
                       class="form-control bg-light border-0"
                       name="email"
+                      id="email"
                       placeholder="Email"
                     />
                     <label for="email">Email</label>
@@ -227,6 +229,7 @@
                       type="text"
                       class="form-control bg-light border-0"
                       name="subject"
+                      id="subject"
                       placeholder="Assunto"
                     />
                     <label for="subject">Assunto</label>
@@ -238,6 +241,7 @@
                       class="form-control bg-light border-0"
                       placeholder="Leave a message here"
                       name="message"
+                      id="message"
                       style="height: 100px"
                     ></textarea>
                     <label for="message">Mensagem</label>
